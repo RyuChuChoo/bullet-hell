@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://bc2nnmt37md1h"]
+
+[ext_resource type="Texture2D" uid="uid://dkheiaigvjlui" path="res://assets/Sprites/Main Character/chibi-layered.png" id="1_8i2ha"]
+[ext_resource type="Script" path="res://scripts/player_movement.gd" id="1_v5u8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n8sf"]
+atlas = ExtResource("1_8i2ha")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkyn5"]
+atlas = ExtResource("1_8i2ha")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uch3t"]
+atlas = ExtResource("1_8i2ha")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cpxb"]
+atlas = ExtResource("1_8i2ha")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_363rs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n8sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkyn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uch3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cpxb")
+}],
+"loop": true,
+"name": &"walk forward",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddvu7"]
+radius = 8.0
+
+[node name="player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("1_v5u8e")
+
+[node name="player_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_363rs")
+animation = &"walk forward"
+autoplay = "walk forward"
+frame_progress = 0.797635
+
+[node name="body" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ddvu7")

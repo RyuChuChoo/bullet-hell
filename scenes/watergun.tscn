@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://jb4esqudb1xq"]
+
+[ext_resource type="Script" path="res://scenes/watergun.gd" id="1_3q2tu"]
+[ext_resource type="Script" path="res://scenes/WeaponSpin.gd" id="1_c52n4"]
+[ext_resource type="Texture2D" uid="uid://c5nx43tpnbx17" path="res://assets/Sprites/Main Character/watergun.png" id="2_qkv4j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vvbaa"]
+radius = 62.0322
+
+[node name="Watergun" type="Area2D"]
+script = ExtResource("1_3q2tu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vvbaa")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+script = ExtResource("1_c52n4")
+
+[node name="Watergun" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(12, 10)
+scale = Vector2(0.6875, 0.6875)
+texture = ExtResource("2_qkv4j")
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Watergun"]
+unique_name_in_owner = true
+position = Vector2(7.375, -2.25)
+scale = Vector2(0.625, 0.625)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

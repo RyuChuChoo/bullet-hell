@@ -1,0 +1,114 @@
+[gd_scene load_steps=24 format=3 uid="uid://cl8urcgb2kxrv"]
+
+[ext_resource type="Texture2D" uid="uid://otvlnnrcope8" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab1.png" id="1_g5yvk"]
+[ext_resource type="Script" path="res://scripts/crab_movement.gd" id="1_v5pr7"]
+[ext_resource type="Texture2D" uid="uid://csh8q4qagrfeq" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab2.png" id="2_prlb7"]
+[ext_resource type="Texture2D" uid="uid://k6g4n5cy7lbr" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab3.png" id="3_d02jy"]
+[ext_resource type="Texture2D" uid="uid://df2iy4036lmql" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab4.png" id="4_2jdrl"]
+[ext_resource type="Texture2D" uid="uid://dto2ce4y66py2" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab5.png" id="5_uopy2"]
+[ext_resource type="Texture2D" uid="uid://cx4rychlm2y8q" path="res://assets/Sprites/Crab Enemy Camacebra Games/Moving/CrabMoving1.png" id="6_atox0"]
+[ext_resource type="Texture2D" uid="uid://bjh8mgvxf5byj" path="res://assets/Sprites/Crab Enemy Camacebra Games/Moving/CrabMoving2.png" id="7_2yhi8"]
+[ext_resource type="Texture2D" uid="uid://dfjwxhc6vr0ve" path="res://assets/Sprites/Crab Enemy Camacebra Games/Moving/CrabMoving3.png" id="8_so0cm"]
+[ext_resource type="Texture2D" uid="uid://brjcvh1kpk62v" path="res://assets/Sprites/Crab Enemy Camacebra Games/Moving/CrabMoving4.png" id="9_d7mlh"]
+[ext_resource type="PackedScene" uid="uid://dkdk6u1xvnu51" path="res://scenes/killzone.tscn" id="11_n8wfc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o4y5"]
+atlas = ExtResource("1_g5yvk")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk42t"]
+atlas = ExtResource("2_prlb7")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq48w"]
+atlas = ExtResource("3_d02jy")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv8k8"]
+atlas = ExtResource("4_2jdrl")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trm3a"]
+atlas = ExtResource("5_uopy2")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c6sg"]
+atlas = ExtResource("6_atox0")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08605"]
+atlas = ExtResource("7_2yhi8")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kudgy"]
+atlas = ExtResource("8_so0cm")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw1bi"]
+atlas = ExtResource("9_d7mlh")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmd5y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o4y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk42t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq48w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv8k8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trm3a")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c6sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08605")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kudgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw1bi")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nksoc"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_744vn"]
+radius = 5.0
+
+[node name="crab" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_v5pr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_tmd5y")
+animation = &"moving"
+autoplay = "moving"
+frame_progress = 0.980707
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nksoc")
+
+[node name="killzone" parent="." instance=ExtResource("11_n8wfc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("CircleShape2D_744vn")
