@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://jb4esqudb1xq"]
 
-[ext_resource type="Script" path="res://scenes/watergun.gd" id="1_3q2tu"]
-[ext_resource type="Script" path="res://scenes/WeaponSpin.gd" id="1_c52n4"]
+[ext_resource type="Script" path="res://scripts/watergun.gd" id="1_3q2tu"]
+[ext_resource type="Script" path="res://scripts/WeaponSpin.gd" id="1_c52n4"]
 [ext_resource type="Texture2D" uid="uid://c5nx43tpnbx17" path="res://assets/Sprites/Main Character/watergun.png" id="2_qkv4j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vvbaa"]
@@ -22,12 +22,11 @@ scale = Vector2(0.6875, 0.6875)
 texture = ExtResource("2_qkv4j")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Watergun"]
-unique_name_in_owner = true
 position = Vector2(7.375, -2.25)
 scale = Vector2(0.625, 0.625)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.3
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
