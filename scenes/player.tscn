@@ -51,7 +51,10 @@ script = ExtResource("1_v5u8e")
 sprite_frames = SubResource("SpriteFrames_363rs")
 animation = &"walk forward"
 autoplay = "walk forward"
-frame_progress = 0.797635
+frame = 3
+frame_progress = 0.324103
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ddvu7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

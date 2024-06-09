@@ -15,6 +15,7 @@ func get_input():
 func _process(delta):
 	var playerInput = get_input()
 	
+	
 	velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
 	
 	move_and_slide()
