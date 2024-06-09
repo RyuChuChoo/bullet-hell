@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://djaqy8vrptco0"]
+
+[node name="score_label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score:"
+
+[node name="score_number" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 1.0
+offset_right = 88.0
+offset_bottom = 24.0

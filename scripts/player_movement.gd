@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-class_name player
-
 const SPEED = 125.0
 const ACCEL = 3.0
 
