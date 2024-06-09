@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var game_manager = get_node("/root/Level 1/game_manager")
 @onready var player = $"../player"
+@onready var animation_player = $AnimationPlayer
 
 var health = 1
 
@@ -16,6 +17,6 @@ func take_damage():
 	
 	if health == 0: 
 		game_manager.add_point()
-		queue_free()
+		animation_player.play("death")
 		
 
