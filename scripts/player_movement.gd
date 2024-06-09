@@ -18,3 +18,6 @@ func _process(delta):
 	velocity = lerp(velocity, playerInput * SPEED, delta * ACCEL)
 	
 	move_and_slide()
+	
+
+	
