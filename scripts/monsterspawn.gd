@@ -11,7 +11,3 @@ func spawn_crab():
 
 func _on_timer_timeout():
 	spawn_crab()
-
-
-
-

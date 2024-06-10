@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdnrjq7vvkrfq"]
+[gd_scene load_steps=14 format=3 uid="uid://bdnrjq7vvkrfq"]
 
 [ext_resource type="Script" path="res://scripts/monsterspawn.gd" id="1_8uuu0"]
 [ext_resource type="PackedScene" uid="uid://bc2nnmt37md1h" path="res://scenes/player.tscn" id="1_17jmh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6sg5sijx5eqk" path="res://scenes/border_topbottom.tscn" id="4_e2cua"]
 [ext_resource type="PackedScene" uid="uid://jb4esqudb1xq" path="res://scenes/watergun.tscn" id="4_xnr3u"]
 [ext_resource type="PackedScene" uid="uid://mgtsiugp57wd" path="res://scenes/border_leftright.tscn" id="5_yxcsf"]
+[ext_resource type="PackedScene" uid="uid://bn6ep12agch2p" path="res://scenes/stop_jump.tscn" id="6_lohl5"]
 [ext_resource type="FontFile" uid="uid://6grespwdnbrn" path="res://assets/fonts/PixelOperator8.ttf" id="7_pfoaq"]
 [ext_resource type="AudioStream" uid="uid://d2234phseg41s" path="res://assets/sounds/8 bit music(version 2).mp3" id="8_vvwqo"]
 
@@ -106,6 +107,8 @@ layer_0/tile_data = PackedInt32Array(-262154, 65536, 2, -196618, 65536, 2, -1310
 [node name="border_topbottom" parent="border" instance=ExtResource("4_e2cua")]
 
 [node name="border_leftright" parent="border" instance=ExtResource("5_yxcsf")]
+
+[node name="stop_jump" parent="." instance=ExtResource("6_lohl5")]
 
 [node name="player" parent="." instance=ExtResource("1_17jmh")]
 
