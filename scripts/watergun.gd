@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var shooting_point = get_node("WeaponPivot/Watergun/ShootingPoint")
+@onready var timer = get_node("Timer")
 
 var Can_shoot = true
 
@@ -12,6 +13,7 @@ func shoot():
 		new_bullet.global_rotation = shooting_point.global_rotation
 		shooting_point.add_child(new_bullet)
 		Can_shoot = false
+		timer.start()
 
 func _input(event):
 	if Input.is_action_just_pressed("left_click"):

@@ -3,17 +3,17 @@
 [ext_resource type="Script" path="res://scenes/border_leftright.gd" id="1_6p22l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0refc"]
-size = Vector2(17, 158)
+size = Vector2(11.125, 155)
 
 [node name="border_leftright" type="Area2D" groups=["border"]]
 script = ExtResource("1_6p22l")
 
 [node name="left_border2" type="CollisionShape2D" parent="." groups=["borders_sides"]]
-position = Vector2(-133, 1)
+position = Vector2(-131.125, 0)
 shape = SubResource("RectangleShape2D_0refc")
 
 [node name="right_border2" type="CollisionShape2D" parent="." groups=["borders_sides"]]
-position = Vector2(127, 0)
+position = Vector2(131.563, 0)
 shape = SubResource("RectangleShape2D_0refc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
