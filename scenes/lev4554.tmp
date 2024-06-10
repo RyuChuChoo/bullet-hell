@@ -177,16 +177,6 @@ offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("7_pfoaq")
 theme_override_font_sizes/font_size = 13
 
-[node name="restart" type="Label" parent="labels/game_over_title"]
-layout_mode = 0
-offset_left = 78.0
-offset_top = 143.0
-offset_right = 268.0
-offset_bottom = 166.0
-theme_override_fonts/font = ExtResource("7_pfoaq")
-theme_override_font_sizes/font_size = 10
-text = "Press 'space' to restart"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("8_vvwqo")
