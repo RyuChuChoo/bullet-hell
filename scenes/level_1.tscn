@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scripts/border.gd" id="3_f6oa8"]
 [ext_resource type="PackedScene" uid="uid://jb4esqudb1xq" path="res://scenes/watergun.tscn" id="4_xnr3u"]
 [ext_resource type="FontFile" uid="uid://6grespwdnbrn" path="res://assets/fonts/PixelOperator8.ttf" id="7_pfoaq"]
-[ext_resource type="AudioStream" uid="uid://dwa1omlj3y1ef" path="res://assets/sounds/8 Bit RPG Game Music (Retro Chiptune) MP3 Download - Zelda Style!.mp3" id="8_ipnno"]
+[ext_resource type="AudioStream" uid="uid://d2234phseg41s" path="res://assets/sounds/8 bit music(version 2).mp3" id="8_vvwqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6fa7"]
 texture = ExtResource("2_psthi")
@@ -77,10 +77,10 @@ physics_layer_0/collision_layer = 8
 sources/0 = SubResource("TileSetAtlasSource_f6fa7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l8jg"]
-size = Vector2(251, 11)
+size = Vector2(251, 21.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjr1e"]
-size = Vector2(8, 128)
+size = Vector2(17, 128)
 
 [sub_resource type="Curve2D" id="Curve2D_dwwet"]
 _data = {
@@ -108,19 +108,19 @@ layer_0/tile_data = PackedInt32Array(-262154, 65536, 2, -196618, 65536, 2, -1310
 script = ExtResource("3_f6oa8")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="border"]
-position = Vector2(0, 64)
+position = Vector2(0, 68.375)
 shape = SubResource("RectangleShape2D_3l8jg")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="border"]
-position = Vector2(0, -65)
+position = Vector2(-2, -68.1875)
 shape = SubResource("RectangleShape2D_3l8jg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border"]
-position = Vector2(-124, -2)
+position = Vector2(-131.5, 2)
 shape = SubResource("RectangleShape2D_rjr1e")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="border"]
-position = Vector2(124, -1)
+position = Vector2(127, -1)
 shape = SubResource("RectangleShape2D_rjr1e")
 
 [node name="player" parent="." instance=ExtResource("1_17jmh")]
@@ -154,7 +154,7 @@ offset_bottom = -57.0
 theme_override_fonts/font = ExtResource("7_pfoaq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_ipnno")
+stream = ExtResource("8_vvwqo")
 autoplay = true
 bus = &"Music"
 
