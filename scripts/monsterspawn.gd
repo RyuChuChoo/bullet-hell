@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var score_label = $score_label
 var score = 0
 
 func spawn_crab():
