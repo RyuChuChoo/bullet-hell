@@ -3,17 +3,18 @@
 [ext_resource type="Script" path="res://scenes/border_topbottom.gd" id="1_v7x6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1gvq"]
-size = Vector2(251, 21.625)
+size = Vector2(256.25, 17)
 
 [node name="border_topbottom" type="Area2D" groups=["border"]]
 script = ExtResource("1_v7x6c")
 
-[node name="down_border2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 68.375)
+[node name="down_border" type="CollisionShape2D" parent="."]
+position = Vector2(-0.125, 70)
 shape = SubResource("RectangleShape2D_p1gvq")
 
-[node name="up_border2" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -68.1875)
+[node name="up_border" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -70.5)
 shape = SubResource("RectangleShape2D_p1gvq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
