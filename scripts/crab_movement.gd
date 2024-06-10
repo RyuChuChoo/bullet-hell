@@ -6,7 +6,6 @@ extends CharacterBody2D
 
 var health = 1
 
-
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
 	velocity = direction * 25
@@ -18,5 +17,4 @@ func take_damage():
 	if health == 0: 
 		game_manager.add_point()
 		animation_player.play("death")
-		
 

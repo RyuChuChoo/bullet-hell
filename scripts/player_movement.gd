@@ -22,8 +22,6 @@ func _process(delta):
 	
 	move_and_slide()
 	
-	var direction = Input.get_axis("left", "right")
-	print(direction)
 	if Input.is_action_pressed("left"):
 			player_sprite.play("side")
 			player_sprite.flip_h = false
