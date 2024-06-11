@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdnrjq7vvkrfq"]
+[gd_scene load_steps=16 format=3 uid="uid://bdnrjq7vvkrfq"]
 
 [ext_resource type="Script" path="res://scripts/monsterspawn.gd" id="1_8uuu0"]
 [ext_resource type="PackedScene" uid="uid://bc2nnmt37md1h" path="res://scenes/player.tscn" id="1_17jmh"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bn6ep12agch2p" path="res://scenes/stop_jump.tscn" id="6_lohl5"]
 [ext_resource type="FontFile" uid="uid://6grespwdnbrn" path="res://assets/fonts/PixelOperator8.ttf" id="7_pfoaq"]
 [ext_resource type="AudioStream" uid="uid://d2234phseg41s" path="res://assets/sounds/8 bit music(version 2).mp3" id="8_vvwqo"]
+[ext_resource type="PackedScene" uid="uid://14vvikwod54f" path="res://scenes/water_trail.tscn" id="9_q85b4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6fa7"]
 texture = ExtResource("2_psthi")
@@ -78,6 +79,10 @@ texture = ExtResource("2_psthi")
 physics_layer_0/collision_layer = 8
 sources/0 = SubResource("TileSetAtlasSource_f6fa7")
 
+[sub_resource type="Curve" id="Curve_dt03p"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_dwwet"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -172, -101, 0, 0, 0, 0, -167, 101, 0, 0, 0, 0, 168, 101, 0, 0, 0, 0, 170, -104, 0, 0, 0, 0, -172, -101)
@@ -111,6 +116,11 @@ layer_0/tile_data = PackedInt32Array(-262154, 65536, 2, -196618, 65536, 2, -1310
 [node name="stop_jump" parent="." instance=ExtResource("6_lohl5")]
 
 [node name="player" parent="." instance=ExtResource("1_17jmh")]
+
+[node name="water trail" parent="player" instance=ExtResource("9_q85b4")]
+show_behind_parent = true
+width_curve = SubResource("Curve_dt03p")
+default_color = Color(1, 1, 1, 0.470588)
 
 [node name="Watergun" parent="player" instance=ExtResource("4_xnr3u")]
 
