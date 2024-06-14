@@ -8,3 +8,7 @@ func add_point():
 	score += 1
 	score_number.text = str(score)
 
+
+
+
+

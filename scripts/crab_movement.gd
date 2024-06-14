@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var game_manager = get_node("/root/Level 1/game_manager")
-@onready var player = $"../player"
+@onready var player = get_node("/root/Level 1/player")
 @onready var animation_player = $AnimationPlayer
 
 var health = 1

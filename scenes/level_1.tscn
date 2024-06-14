@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://bdnrjq7vvkrfq"]
 
-[ext_resource type="Script" path="res://scripts/monsterspawn.gd" id="1_8uuu0"]
 [ext_resource type="PackedScene" uid="uid://bc2nnmt37md1h" path="res://scenes/player.tscn" id="1_17jmh"]
+[ext_resource type="Script" path="res://scenes/monster_spawner.gd" id="1_suwas"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="2_hexb1"]
-[ext_resource type="Texture2D" uid="uid://b8dwx48wv64qu" path="res://assets/Sprites/Tiles/Beach tile set.png" id="2_psthi"]
+[ext_resource type="Texture2D" uid="uid://b8dwx48wv64qu" path="res://assets/Sprites/Tiles/Beach tile set.png" id="3_mjqnu"]
 [ext_resource type="PackedScene" uid="uid://b6sg5sijx5eqk" path="res://scenes/border_topbottom.tscn" id="4_e2cua"]
 [ext_resource type="PackedScene" uid="uid://jb4esqudb1xq" path="res://scenes/watergun.tscn" id="4_xnr3u"]
 [ext_resource type="PackedScene" uid="uid://mgtsiugp57wd" path="res://scenes/border_leftright.tscn" id="5_yxcsf"]
@@ -12,28 +12,28 @@
 [ext_resource type="AudioStream" uid="uid://d2234phseg41s" path="res://assets/sounds/8 bit music(version 2).mp3" id="8_vvwqo"]
 [ext_resource type="PackedScene" uid="uid://14vvikwod54f" path="res://scenes/water_trail.tscn" id="9_q85b4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6fa7"]
-texture = ExtResource("2_psthi")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63ovb"]
+texture = ExtResource("3_mjqnu")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.47487, -8, -8, 8, -8, 8, -3.44715, -3.27037, -3.44715, -3.97748, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -3.125, -8, 3, -8, 8, -8, 8, -3.625, -1.875, -2.25, -1.875, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -3.71231, -8, -4.06586, -8, -8)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.25, -8, -8, 8, -8, 8, -3.125, 0.25, -3.25)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -3.71231, -8, -4.06586, -8, -8)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.25, -8, -8, 8, -8, 8, -3.125, 0.25, -3.25)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.50781, -8, -8, 8, -8, 8, 8, 4.24264, 8, 4.06586, -3.8007)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.5, -8, -8, 8, -8, 8, -3.125, 8, 8, 3.375, 8, 3.375, -3.125)
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -1.59099, -8, -1.59099, 8, -8, 8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -2.875, -8, -3.375, 1.25, -2.875, 8)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -43,11 +43,11 @@ texture = ExtResource("2_psthi")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 0.707107, 8, 8, 3.27037, 8, 3.18198, -8)
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.75, 1, 3.125, -8, 8, -8, 8, 8, 3.125, 8)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -1.59099, -8, -1.59099, 8, -8, 8)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -2.875, -8, -3.375, 1.25, -2.875, 8)
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
@@ -57,27 +57,27 @@ texture = ExtResource("2_psthi")
 3:2/0 = 0
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 0.707107, 8, 8, 3.27037, 8, 3.18198, -8)
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.75, 1, 3.125, -8, 8, -8, 8, 8, 3.125, 8)
 0:3/0 = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:3/0/physics_layer_0/angular_velocity = 0.0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.27037, -8, -3.53554, 4.68458, 8, 4.86136, 8, 8, -8, 8)
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -2.875, -8, -2.75, 3.375, 2.625, 3.375, 8, 3.625, 8, 8, 3.375, 8, -1.875, 8)
 1:3/0 = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:3/0/physics_layer_0/angular_velocity = 0.0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.71231, 8, 3.71231, 8, 8, -3.97748, 8, -8, 8)
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
 2:3/0 = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:3/0/physics_layer_0/angular_velocity = 0.0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.71231, 8, 3.71231, 8, 8, -3.97748, 8, -8, 8)
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3, 8, 3, 8, 8, -8, 8)
 3:3/0 = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.41942, 2.2981, 3.88909, 2.65165, -8, 8, -8, 8, 8, -3.97748, 8, -8, 8)
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.5, 2.375, 2.5, 2.875, -8, 8, -8, 8, 8, 3.375, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_1vw1w"]
 physics_layer_0/collision_layer = 8
-sources/0 = SubResource("TileSetAtlasSource_f6fa7")
+sources/0 = SubResource("TileSetAtlasSource_63ovb")
 
 [sub_resource type="Curve" id="Curve_dt03p"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -91,7 +91,7 @@ point_count = 5
 
 [node name="Level 1" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_8uuu0")
+script = ExtResource("1_suwas")
 
 [node name="game_manager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -131,9 +131,6 @@ curve = SubResource("Curve2D_dwwet")
 unique_name_in_owner = true
 position = Vector2(-172, -101)
 rotation = 1.54605
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="labels" type="Node" parent="."]
 
@@ -205,5 +202,8 @@ process_mode = 3
 stream = ExtResource("8_vvwqo")
 autoplay = true
 bus = &"Music"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
