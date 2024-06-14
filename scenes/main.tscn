@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://12q3clqvd7jn"]
+
+[ext_resource type="PackedScene" uid="uid://0tidmdx1wwyi" path="res://scenes/main_menu.tscn" id="1_lbic4"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_vjdva"]
+[ext_resource type="Script" path="res://scripts/classes/level_data.gd" id="2_hooqb"]
+
+[sub_resource type="Resource" id="Resource_53f6t"]
+script = ExtResource("2_hooqb")
+level_id = 1
+level_name = "level_1"
+level_completed = false
+level_unlocked = false
+level_path = "level_1"
+
+[node name="Main" type="Node"]
+script = ExtResource("1_vjdva")
+available_levels = Array[ExtResource("2_hooqb")]([SubResource("Resource_53f6t")])
+
+[node name="UIMain" type="CanvasLayer" parent="."]
+
+[node name="main_menu" parent="UIMain" instance=ExtResource("1_lbic4")]
+
+[node name="2DScene" type="Node2D" parent="."]
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(167, 100)
+scale = Vector2(32, 32)
+zoom = Vector2(4, 4)

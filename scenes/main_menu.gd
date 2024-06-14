@@ -1,8 +1,9 @@
+class_name MainMenu
 extends Control
 
-
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	LevelManager.load_level(1)
+	deactive()
 
 
 func _on_controls_pressed():
@@ -11,3 +12,15 @@ func _on_controls_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func deactive() -> void:
+	hide()
+	set_physics_process(false)
+	set_process_unhandled_input(false)
+	set_process_input(false)
+	
+func activate() -> void:
+	show()
+	set_physics_process(true)
+	set_process_unhandled_input(true)
+	set_process_input(true)
