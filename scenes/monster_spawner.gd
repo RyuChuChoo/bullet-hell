@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 func spawn_crab():
 	var crab = preload("res://scenes/crab.tscn").instantiate()

@@ -95,14 +95,8 @@ script = ExtResource("1_2xu7n")
 level_id = 1
 
 [node name="game_manager" type="Node" parent="."]
-unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("2_hexb1")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(167, 100)
-scale = Vector2(32, 32)
-zoom = Vector2(4, 4)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(160, 96)
@@ -113,13 +107,14 @@ layer_0/tile_data = PackedInt32Array(-262154, 65536, 2, -196618, 65536, 2, -1310
 [node name="border" type="Node" parent="."]
 
 [node name="border_topbottom" parent="border" instance=ExtResource("4_e2cua")]
-position = Vector2(160, 96)
+position = Vector2(161, 95)
 
 [node name="border_leftright" parent="border" instance=ExtResource("5_yxcsf")]
-position = Vector2(160, 96)
+position = Vector2(160, 97)
 
 [node name="stop_jump" parent="." instance=ExtResource("6_lohl5")]
-position = Vector2(160, 96)
+position = Vector2(159, 95)
+scale = Vector2(0.925022, 0.876)
 
 [node name="player" parent="." instance=ExtResource("1_17jmh")]
 position = Vector2(160, 96)
@@ -212,5 +207,10 @@ bus = &"Music"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 93)
+scale = Vector2(32, 32)
+zoom = Vector2(4, 4)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

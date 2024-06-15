@@ -21,8 +21,3 @@ available_levels = Array[ExtResource("2_hooqb")]([SubResource("Resource_53f6t")]
 [node name="main_menu" parent="UIMain" instance=ExtResource("1_lbic4")]
 
 [node name="2DScene" type="Node2D" parent="."]
-
-[node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(167, 100)
-scale = Vector2(32, 32)
-zoom = Vector2(4, 4)
