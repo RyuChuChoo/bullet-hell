@@ -1,0 +1,128 @@
+[gd_scene load_steps=16 format=3 uid="uid://0tidmdx1wwyi"]
+
+[ext_resource type="FontFile" uid="uid://6grespwdnbrn" path="res://assets/fonts/PixelOperator8.ttf" id="1_56r4q"]
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_a8ne7"]
+[ext_resource type="Texture2D" uid="uid://d3ip58bb4xh2" path="res://assets/Sprites/background.png" id="2_e6e2t"]
+[ext_resource type="Texture2D" uid="uid://6aiapb2o166l" path="res://assets/Sprites/Main Character/chibi-layered_abovewater.png" id="3_2q7vm"]
+[ext_resource type="Texture2D" uid="uid://otvlnnrcope8" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab1.png" id="4_uqdlb"]
+[ext_resource type="Texture2D" uid="uid://csh8q4qagrfeq" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab2.png" id="5_nfi2l"]
+[ext_resource type="Texture2D" uid="uid://k6g4n5cy7lbr" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab3.png" id="6_l1x20"]
+[ext_resource type="Texture2D" uid="uid://df2iy4036lmql" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab4.png" id="7_kgf2p"]
+[ext_resource type="Texture2D" uid="uid://dto2ce4y66py2" path="res://assets/Sprites/Crab Enemy Camacebra Games/Idle/Crab5.png" id="8_odmx0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0t0u"]
+atlas = ExtResource("4_uqdlb")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnpyj"]
+atlas = ExtResource("5_nfi2l")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuhtm"]
+atlas = ExtResource("6_l1x20")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcp3h"]
+atlas = ExtResource("7_kgf2p")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp6ao"]
+atlas = ExtResource("8_odmx0")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnrrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0t0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnpyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuhtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcp3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp6ao")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -707.0
+offset_bottom = -386.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a8ne7")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(590, 338)
+scale = Vector2(3.70654, 3.8512)
+texture = ExtResource("2_e6e2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1050, 518)
+scale = Vector2(9.56217, 9.16114)
+texture = ExtResource("3_2q7vm")
+region_enabled = true
+region_rect = Rect2(0, 32.1058, 16.2943, 15.8942)
+
+[node name="crab" type="AnimatedSprite2D" parent="."]
+position = Vector2(147, 542)
+scale = Vector2(5.5079, 6.34816)
+sprite_frames = SubResource("SpriteFrames_gnrrt")
+autoplay = "default"
+frame_progress = 0.923038
+
+[node name="characters" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 57.0
+offset_right = 559.0
+offset_bottom = 80.0
+scale = Vector2(2.23413, 5.39881)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_56r4q")
+theme_override_font_sizes/font_size = 16
+text = "Beach Fight"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 260.0
+offset_right = 473.0
+offset_bottom = 340.0
+scale = Vector2(3.51304, 3.86134)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_56r4q")
+text = "Play"
+
+[node name="controls" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_56r4q")
+text = "controls"
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_56r4q")
+text = "quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

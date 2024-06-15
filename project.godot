@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Ryu and Ze game"
-run/main_scene="res://scenes/level_1.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelManager="*res://scripts/managers/LevelManager.gd"
 
 [input]
 

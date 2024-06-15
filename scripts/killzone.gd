@@ -1,11 +1,11 @@
 extends Area2D
 
-@onready var player_movement = get_node("/root/Level 1/player")
-@onready var game_over_title = get_node("/root/Level 1/labels/game_over_title")
-@onready var score_label = get_node("/root/Level 1/labels/score_label")
-@onready var score_number = get_node("/root/Level 1/labels/score_label/score_number")
-@onready var final_score_number = get_node("/root/Level 1/labels/game_over_title/final_score_number")
-@onready var Level_1 = get_node("/root/Level 1")
+@onready var player_movement = $"/root/Main/2DScene/Level 1/player"
+@onready var game_over_title = $"/root/Main/2DScene/Level 1/labels/game_over_title"
+@onready var score_label = $"/root/Main/2DScene/Level 1/labels/score_label"
+@onready var score_number = $"/root/Main/2DScene/Level 1/labels/score_label/score_number"
+@onready var final_score_number = $"/root/Main/2DScene/Level 1/labels/game_over_title/final_score_number"
+@onready var Level_1 = $"/root/Main/2DScene/Level 1/"
 
 var is_game_over = false
 var jumped = false

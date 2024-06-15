@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-@onready var game_manager = get_node("/root/Level 1/game_manager")
-@onready var player = $"../player"
+@onready var game_manager = $"/root/Main/2DScene/Level 1/game_manager"
+@onready var player = $"/root/Main/2DScene/Level 1/player"
 @onready var animation_player = $AnimationPlayer
+
 
 var health = 1
 var jumped = false
@@ -21,14 +22,12 @@ func take_damage():
 		animation_player.play("death")
 
 func jump(area):
-	if area == "leftright" and not jumped:
+	if not jumped:
 		jumped = true
 		animation_player.play("jump")
 
-	elif area == "topbottom" and not jumped:
-		jumped = true
-		animation_player.play("jump")
 
 func splash():
 	if jumped:
 		animation_player.play("splash")
+		print("Crab splashed")
